@@ -38,30 +38,6 @@ public class Video extends Media implements Riproducibile, Luminosità {
     }
 
     @Override
-    public void setLuminosità() {
-        if (luminosità >= 0 && luminosità <= 10) {
-            this.luminosità = luminosità;
-            System.out.println("Luminosità : " + luminosità);
-        } else {
-            System.out.println("Il Valore di luminosità deve essere compreso tra 0 e 10.");
-        }
-
-    }
-
-    @Override
-    public void setVolume(int volume) {
-        if ( volume < 0) {
-            System.out.println("Non puoi più abbassare il volume");
-        }else {
-            if ( volume < 10) {
-                System.out.println("Volume al massimo");
-            }else{
-                this.volume= volume;
-            }
-        }
-    }
-
-    @Override
     public void volumeUp() {
         if ( volume < 10){
             volume++;
@@ -81,14 +57,6 @@ public class Video extends Media implements Riproducibile, Luminosità {
         }
     }
 
-    @Override
-    public void setDurata(int durata) {
-        if ( durata <= 0){
-            System.out.println("Inserisci una durata valida");
-        }else{
-            this.durata = durata;
-        }
-    }
 
     @Override
     public void riproduci() {
@@ -96,10 +64,11 @@ public class Video extends Media implements Riproducibile, Luminosità {
             for(int i=0; i<durata; i++){
                 System.out.println(super.titolo);
             }
-            System.out.println("Volume : ");
             for(int i=0; i<volume; i++){
-                System.out.print("!");
+                System.out.println("!");
             }
-        }
+            for(int i=0; i<luminosità; i++){
+                System.out.println("*");
+        }}
     }
 }

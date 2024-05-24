@@ -15,7 +15,7 @@ public class Immagine extends Media implements Luminosità {
         if (this.luminosità >= 0 && this.luminosità <= 10) {
             System.out.println(this.titolo);
             for (int i = 0; i < this.luminosità; i++) {
-                System.out.print("*");
+                System.out.println("*");
             }
         }
     }
@@ -39,16 +39,6 @@ public class Immagine extends Media implements Luminosità {
     }else{
         System.out.println("Luminosità al minimo");
     }
-    }
-
-    @Override
-    public void setLuminosità() {
-        if (luminosità >= 0 && luminosità <= 10) {
-            this.luminosità = luminosità;
-            System.out.print("Luminosità : " + luminosità);
-        } else {
-            System.out.println("Il Valore di luminosità deve essere compreso tra 0 e 10.");
-        }
     }
 
 }
