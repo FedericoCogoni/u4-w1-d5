@@ -13,9 +13,6 @@ public class Audio extends Media implements Riproducibile {
         this.volume = volume;
     }
 
-
-
-
     @Override
     public void volumeUp() {
     if ( volume < 10){
@@ -37,16 +34,19 @@ public class Audio extends Media implements Riproducibile {
 
     }
 
-
     @Override
     public void riproduci() {
     if(this.durata > 0 ){
-        for(int i=0; i<durata; i++){
-            System.out.println(super.titolo);
+        for(int i=0; i<durata; i++) {
+            System.out.print(super.titolo);
+
+            for (int c = 0; c < volume; c++) {
+                System.out.print("!");
+
+            }
+            System.out.println();
         }
-        for(int i=0; i<volume; i++){
-            System.out.println("!");
-        }
+
     }
     }
 }

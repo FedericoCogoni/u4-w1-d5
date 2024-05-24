@@ -4,11 +4,13 @@ import entities.Immagine;
 import entities.Video;
 import entities.Media;
 
+import javax.swing.plaf.IconUIResource;
+
 public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int numMedia = 3;
+        int numMedia = 1;
         Media[] fileMultimediali = new Media[numMedia];
 
         System.out.println("Benvenuto! Crea fino a " + numMedia + " file multimediali.");
@@ -28,17 +30,18 @@ public class Main {
             int durata = 0;
             int volume = 0;
             if (scelta == 1 || scelta == 3) {
+                System.out.print("Inserisci la durata in secondi: ");
+                durata = scanner.nextInt();
+                scanner.nextLine();
                 System.out.print("Inserisci il volume (da 0 a 10): ");
                 volume = scanner.nextInt();
                 scanner.nextLine();
-                System.out.println("Inserisci la durata in secondi: ");
-                durata = scanner.nextInt();
-                scanner.nextLine();
+
             }
 
             int luminosità = 0;
             if (scelta == 2 || scelta == 3) {
-                System.out.println("Inserisci la luminosità (da 0 a 10): ");
+                System.out.print("Inserisci la luminosità (da 0 a 10): ");
                 luminosità = scanner.nextInt();
                 scanner.nextLine();
             }
@@ -58,17 +61,29 @@ public class Main {
 
             }
         }
+        System.out.println("Hai creato nuovi file!!");
 
+        while (true) {
+            System.out.println("Scegli il file da riprodurre (da 1 a 5), premi 0 per uscire:");
+            int scelta = scanner.nextInt();
+            scanner.nextLine();
+            if (scelta == 0) {
+                System.out.println("Uscita");
+                break;
+            } else if (scelta < 1 || scelta > 5) {
+                System.out.println("Scelta non valida. Inserisci un numero da 1 a 5.");
+                continue;
+            }
 
-        System.out.println("File creati:");
-        for (int i = 0; i < fileMultimediali.length; i++) {
-            Media file = fileMultimediali[i];
+            Media file = fileMultimediali[scelta - 1];
+            String tipoFile = file instanceof Audio ? "Audio" : file instanceof Video ? "Video" : "Immagine";
+            System.out.println(tipoFile + " Titolo: " + file.getTitolo());
             if (file instanceof Audio) {
                 ((Audio) file).riproduci();
-            } else if (file instanceof Immagine) {
-                ((Immagine) file).show();
             } else if (file instanceof Video) {
                 ((Video) file).riproduci();
+            } else if (file instanceof Immagine) {
+                ((Immagine) file).show();
             }
         }
 

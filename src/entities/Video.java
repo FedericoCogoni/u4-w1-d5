@@ -19,40 +19,40 @@ public class Video extends Media implements Riproducibile, Luminosità {
 
     @Override
     public void luminositàUp() {
-        if (luminosità < 10){
+        if (luminosità < 10) {
             luminosità++;
             System.out.println("Luminosità : " + luminosità);
-        }else{
+        } else {
             System.out.println("Luminosità al massimo");
         }
     }
 
     @Override
     public void luminositàDown() {
-        if ( luminosità > 0) {
+        if (luminosità > 0) {
             luminosità--;
             System.out.println("Luminosità : " + luminosità);
-        }else{
+        } else {
             System.out.println("Luminosità al minimo");
         }
     }
 
     @Override
     public void volumeUp() {
-        if ( volume < 10){
+        if (volume < 10) {
             volume++;
             System.out.println("Volume : " + volume);
-        }else {
+        } else {
             System.out.println("Volume al massimo");
         }
     }
 
     @Override
     public void volumeDown() {
-        if ( volume > 0 ){
+        if (volume > 0) {
             volume--;
             System.out.println("Volume : " + volume);
-        }else{
+        } else {
             System.out.println("Volume al minimo");
         }
     }
@@ -60,15 +60,22 @@ public class Video extends Media implements Riproducibile, Luminosità {
 
     @Override
     public void riproduci() {
-        if(this.durata > 0 ){
-            for(int i=0; i<durata; i++){
-                System.out.println(super.titolo);
+        if (this.durata > 0) {
+            for (int i = 0; i < durata; i++) {
+                System.out.print(super.titolo + " ");
+
+                for (int x = 0; x < volume; x++) {
+                    System.out.print("!");
+                }
+                System.out.print(" ");
+                for (int c = 0; c < luminosità; c++) {
+                    System.out.print("*");
+
+                }
+                System.out.println();
             }
-            for(int i=0; i<volume; i++){
-                System.out.println("!");
-            }
-            for(int i=0; i<luminosità; i++){
-                System.out.println("*");
-        }}
+
+        }
+
     }
 }

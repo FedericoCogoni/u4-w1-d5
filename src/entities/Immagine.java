@@ -12,12 +12,12 @@ public class Immagine extends Media implements Luminosità {
     }
 
     public void show(){
-        if (this.luminosità >= 0 && this.luminosità <= 10) {
-            System.out.println(this.titolo);
+
+            System.out.print(this.titolo);
             for (int i = 0; i < this.luminosità; i++) {
-                System.out.println("*");
+                System.out.print("*");
             }
-        }
+
     }
 
 

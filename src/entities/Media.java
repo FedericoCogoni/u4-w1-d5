@@ -14,4 +14,8 @@ public abstract class Media {
                 "titolo='" + titolo + '\'' +
                 '}';
     }
+
+    public String getTitolo() {
+        return titolo;
+    }
 }
