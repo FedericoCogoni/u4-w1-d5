@@ -3,14 +3,15 @@ import entities.Audio;
 import entities.Immagine;
 import entities.Video;
 import entities.Media;
-
-import javax.swing.plaf.IconUIResource;
-
 public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int numMedia = 1;
+        int durata = 0;
+        int volume = 0;
+        int luminosità = 0;
+
         Media[] fileMultimediali = new Media[numMedia];
 
         System.out.println("Benvenuto! Crea fino a " + numMedia + " file multimediali.");
@@ -26,9 +27,6 @@ public class Main {
             System.out.println("Inserisci il titolo del file: ");
             String titolo = scanner.nextLine();
 
-
-            int durata = 0;
-            int volume = 0;
             if (scelta == 1 || scelta == 3) {
                 System.out.print("Inserisci la durata in secondi: ");
                 durata = scanner.nextInt();
@@ -39,7 +37,6 @@ public class Main {
 
             }
 
-            int luminosità = 0;
             if (scelta == 2 || scelta == 3) {
                 System.out.print("Inserisci la luminosità (da 0 a 10): ");
                 luminosità = scanner.nextInt();
@@ -86,7 +83,6 @@ public class Main {
                 ((Immagine) file).show();
             }
         }
-
         scanner.close();
     }
 }

@@ -20,7 +20,6 @@ public class Immagine extends Media implements Luminosità {
 
     }
 
-
     @Override
     public void luminositàUp() {
     if (luminosità < 10){
@@ -40,5 +39,4 @@ public class Immagine extends Media implements Luminosità {
         System.out.println("Luminosità al minimo");
     }
     }
-
 }

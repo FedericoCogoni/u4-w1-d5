@@ -16,7 +16,6 @@ public class Video extends Media implements Riproducibile, Luminosità {
         this.volume = volume;
     }
 
-
     @Override
     public void luminositàUp() {
         if (luminosità < 10) {
@@ -57,7 +56,6 @@ public class Video extends Media implements Riproducibile, Luminosità {
         }
     }
 
-
     @Override
     public void riproduci() {
         if (this.durata > 0) {
@@ -74,8 +72,6 @@ public class Video extends Media implements Riproducibile, Luminosità {
                 }
                 System.out.println();
             }
-
         }
-
     }
 }
