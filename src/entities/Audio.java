@@ -37,7 +37,7 @@ public class Audio extends Media implements Riproducibile {
     public void riproduci() {
     if(this.durata > 0 ){
         for(int i=0; i<durata; i++) {
-            System.out.print(super.titolo);
+            System.out.print(super.titolo +" ");
 
             for (int c = 0; c < volume; c++) {
                 System.out.print("!");

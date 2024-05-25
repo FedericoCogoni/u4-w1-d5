@@ -13,7 +13,7 @@ public class Immagine extends Media implements Luminosità {
 
     public void show(){
 
-            System.out.print(this.titolo);
+            System.out.print(super.titolo +" ");
             for (int i = 0; i < this.luminosità; i++) {
                 System.out.print("*");
             }

@@ -7,12 +7,20 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int numMedia = 1;
+
+        int numMedia = 5;
+
+        //avevo dimenticato di settare il numero di media creabili a 5;
+        //per testare l'app lo avevo settato a 1.
+
         int durata = 0;
         int volume = 0;
         int luminosità = 0;
 
         Media[] fileMultimediali = new Media[numMedia];
+
+        //creo un array di oggetti polimorfico, sfrutto numMedia qui e anche in seguito in modo da avere 1 posto
+        //in cui poter effettuare una modifica
 
         System.out.println("Benvenuto! Crea fino a " + numMedia + " file multimediali.");
 
@@ -58,9 +66,18 @@ public class Main {
 
             }
         }
+
+        //un piccolo feedback per l'utente;
+
         System.out.println("Hai creato nuovi file!!");
 
+        //sfrutto un ciclo "infinito" che si chiuderà soltanto quando l'utente inserirà "0".
+        //Utilizzo nuovamente la variabile "scelta" per registrare la scelta dell'utente.
+        //Do a file la posizione dell'array polimorfico "scelta - 1" in modo da "allineare"
+        //utente e macchina.
+
         while (true) {
+            System.out.println();
             System.out.println("Scegli il file da riprodurre (da 1 a 5), premi 0 per uscire:");
             int scelta = scanner.nextInt();
             scanner.nextLine();
